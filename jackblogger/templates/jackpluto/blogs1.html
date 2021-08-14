@@ -1,0 +1,107 @@
+               <!-- end topbar -->
+               {% extends 'jackpluto/base1.html' %}
+               {% load static %}
+               {% block contant %}
+               <div id="content">
+                   <!-- topbar -->
+                   <div class="topbar">
+                      <nav class="navbar navbar-expand-lg navbar-light">
+                         <div class="full">
+                            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                            <div class="logo_section">
+                               <a href="{% static 'jackpluto/index.html' %}"><img class="img-responsive" src="{% static 'jackpluto/images/logo/logo.png' %}" alt="#" /></a>
+                            </div>
+                            <div class="right_topbar">
+                               <div class="icon_info">
+                                  <ul>
+                                     <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                                     <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                                     <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
+                                  </ul>
+                                  <ul class="user_profile_dd">
+                                     <li>
+                                        <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{% static 'jackpluto/images/layout_img/user_img.jpg' %}" alt="#" /><span class="name_user">John David</span></a>
+                                        <div class="dropdown-menu">
+                                           <a class="dropdown-item" href="{% static 'jackpluto/profile.html' %}">My Profile</a>
+                                           <a class="dropdown-item" href="{% static 'jackpluto/settings.html' %}">Settings</a>
+                                           <a class="dropdown-item" href="{% static 'jackpluto/help.html' %}">Help</a>
+                                           <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                        </div>
+                                     </li>
+                                  </ul>
+                               </div>
+                            </div>
+                         </div>
+                      </nav>
+                   </div>
+                   <style>
+                    table {
+                      font-family: arial, sans-serif;
+                      border-collapse: collapse;
+                      width: 100%;
+                      color: #030303;
+                    }
+              
+                    td,
+                    th {
+                      border: 1px solid #030303;
+                      text-align: left;
+                      padding: 8px;
+                    }
+                  </style>
+                   <!-- end topbar -->
+                              <!-- dashboard inner -->
+                              <div class="midde_cont">
+                               <div class="container-fluid">
+                                  <div class="row column_title">
+                                     <div class="col-md-12">
+                                        <div class="page_title">
+                                           <h2>Change Blogs</h2>
+                                        </div>
+                                     </div>
+                                  </div>
+                     <!-- row -->
+                     <table>
+                        <tr>
+                          
+                          <th>Blogs</th>
+                          <th>Blog Time</th>
+                          <th>Blog Info</th>
+                          <th>Blog Edit</th>
+                          <th>Blog Delete</th>
+                          
+                          
+                          
+                        
+                        </tr>
+                        {% for blog in context.all %}
+                        <tr>
+                          
+                          <td>{{ blog.title}}</td>
+                          <td>{{ blog.pub_date }}</td>
+                          <td>{{ blog.body}}</td>
+                          
+                          
+                          <td style="padding: 10px">
+                            <a href="{% url 'edit_blog' blog.id %}"
+                              ><button type="button" class="btn btn-secondary">
+                                EDIT BLOG
+                              </button></a>
+
+                            <td style="padding: 10px">
+                              <a href="{% url 'delete_blog' blog.id %}"
+                                ><button type="button" class="btn btn-danger">Delete</button></a>
+                              
+                            </td>
+                        </tr>
+                        
+                        {% endfor %}
+                      </table>
+                      <center><a href="{% url 'add_blog' %}"
+                        ><button type="button" class="btn btn-primary">Add Blog</button></a>
+                    </center>
+                      
+
+               
+                     <!-- footer -->
+ {% endblock %}

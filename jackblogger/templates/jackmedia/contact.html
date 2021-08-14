@@ -1,0 +1,55 @@
+{% extends 'jackmedia/base.html' %}
+{% load static %}
+{% block contant %}
+      <!-- section -->
+      <section class="layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full comment_form">
+                     <form action="" method="POST" >
+                        {% csrf_token %}
+                        <fieldset>
+                           <div class="col-md-12">
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <input type="text" name="title" placeholder="Name"  />
+                                    <input type="email" name="mail" placeholder="Email"  />
+                                     <input type="text" name="sub" placeholder="subject" />
+                                 </div>
+                                 <div class="col-md-6">
+                                    <textarea class="wdt" placeholder="Message" name="message"></textarea>
+                                 </div>
+                              </div>
+                              <div class="row margin_top_30">
+                                 <div class="col-md-12">
+                                    <div class="center">
+                                       <button>Send</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end section -->
+
+      <section>
+         <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12" style="padding: 0;">
+                   <div class="map_section">
+                     <div id="map">
+                     </div>
+                   </div>
+                </div>
+            </div>
+         </div>
+      </section>
+      
+      <!-- footer -->
+{% endblock %}

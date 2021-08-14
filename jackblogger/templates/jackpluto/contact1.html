@@ -1,0 +1,140 @@
+{% extends 'jackpluto/base1.html' %}
+{% load static %}
+{% block contant %}
+            
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section">
+                           <a href="{% static 'jackpluto/index.html' %}"><img class="img-responsive" src="{% static 'jackpluto/images/logo/logo.png' %}" alt="#" /></a>
+                        </div>
+                        <div class="right_topbar">
+                           <div class="icon_info">
+                              <ul>
+                                 <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                                 <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
+                              </ul>
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{% static 'jackpluto/images/layout_img/user_img.jpg' %}" alt="#" /><span class="name_user">John David</span></a>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="{% static 'jackpluto/profile.html' %}">My Profile</a>
+                                       <a class="dropdown-item" href="{% static 'jackpluto/settings.html' %}">Settings</a>
+                                       <a class="dropdown-item" href="{% static 'jackpluto/help.html' %}">Help</a>
+                                       <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <style>
+                  table {
+                    font-family: arial, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                    color: #030303;
+                  }
+            
+                  td,
+                  th {
+                    border: 1px solid #030303;
+                    text-align: left;
+                    padding: 8px;
+                  }
+                </style>
+               <!-- end topbar -->
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Contacts</h2>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- row -->
+
+
+                     <table>
+                        <tr>
+                          <th>Name</th>
+                          
+                          <th>sub</th>
+                          <th>Email</th>
+                          <th>Message</th>
+                        </tr>
+                        {% for product in context %}
+                        <tr>
+                          <td>{{ product.title}}</td>
+                          
+                          <td>{{ product.sub}}</td>
+                          <td>{{product.mail}}</td>
+                          <td>{{product.message}}</td>
+                        </tr>
+                        {% endfor %}
+                      </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     <!-- footer -->
+                     <div class="container-fluid">
+                        <div class="row">
+                           <div class="footer">
+                              <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- end dashboard inner -->
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+      <script src="{% static 'jackpluto/js/jquery.min.js' %}"></script>
+      <script src="{% static 'jackpluto/js/popper.min.js' %}"></script>
+      <script src="{% static 'jackpluto/js/bootstrap.min.js' %}"></script>
+      <!-- wow animation -->
+      <script src="{% static 'jackpluto/js/animate.js' %}"></script>
+      <!-- select country -->
+      <script src="{% static 'jackpluto/js/bootstrap-select.js' %}"></script>
+      <!-- owl carousel -->
+      <script src="{% static 'jackpluto/js/owl.carousel.js' %}"></script> 
+      <!-- chart js -->
+      <script src="{% static 'jackpluto/js/Chart.min.js' %}"></script>
+      <script src="{% static 'jackpluto/js/Chart.bundle.min.js' %}"></script>
+      <script src="{% static 'jackpluto/js/utils.js' %}"></script>
+      <script src="{% static 'jackpluto/js/analyser.js' %}"></script>
+      <!-- nice scrollbar -->
+      <script src="{% static 'jackpluto/js/perfect-scrollbar.min.js' %}"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="{% static 'jackpluto/js/custom.js' %}"></script>
+      <!-- calendar file css -->     
+      <script src="{% static 'jackpluto/js/semantic.min.js' %}"></script>
+      <script></script>
+   </body>
+   {% endblock %}
